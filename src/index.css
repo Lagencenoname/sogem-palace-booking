@@ -98,14 +98,17 @@ All colors MUST be HSL.
   }
 }
 
-/* Style pour rendre le badge Lovable transparent */
-.lovable-badge {
-  opacity: 0.3 !important;
-  transition: opacity 0.3s ease !important;
+/* Cache le badge Lovable complètement */
+#lovable-badge {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }
 
-.lovable-badge:hover {
-  opacity: 0.8 !important;
+/* Style pour rendre le badge Lovable transparent (alternative) */
+.lovable-badge {
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* Styles pour améliorer les selects sur mobile */
@@ -119,4 +122,18 @@ All colors MUST be HSL.
     left: 0 !important;
     right: 0 !important;
   }
+}
+
+/* Animation pour ligne horizontale premium */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.premium-line {
+  animation: shimmer 3s ease-in-out infinite;
 }
