@@ -21,12 +21,12 @@ const ReservationSection = () => {
   });
 
   const espaces = [
-    { value: 'coworking-jour', label: 'Coworking Open Space (Jour 8h-17h) - 1 000F' },
-    { value: 'coworking-soir', label: 'Coworking Open Space (Soir 17h-22h) - 1 500F' },
+    { value: 'coworking-jour', label: 'Coworking (Jour 8h-17h) - 1 000F' },
+    { value: 'coworking-soir', label: 'Coworking (Soir 17h-22h) - 1 500F' },
     { value: 'bureau-prive', label: 'Bureau privé - 2 500F/heure' },
-    { value: 'reunion-15', label: 'Salle de réunion 15 places - 5 000F/h ou 15 000F/jour' },
-    { value: 'conference-50', label: 'Salle de conférence 50 places - 10 000F/h ou 50 000F/jour' },
-    { value: 'evenement-100', label: 'Grande salle événements 100 places - 15 000F/h ou 100 000F/jour' }
+    { value: 'reunion-15', label: 'Salle réunion 15p - 5 000F/h' },
+    { value: 'conference-50', label: 'Salle conférence 50p - 10 000F/h' },
+    { value: 'evenement-100', label: 'Grande salle 100p - 15 000F/h' }
   ];
 
   const durees = [
@@ -74,7 +74,7 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
   return (
     <section id="reservation" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* En-tête */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Réservation</h2>
@@ -92,7 +92,7 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                   Formulaire de réservation
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-8 space-y-6">
+              <CardContent className="p-6 space-y-6">
                 {/* Informations personnelles */}
                 <div className="space-y-4">
                   <h3 className="font-semibold text-gray-900 border-b pb-2">Vos informations</h3>
@@ -135,12 +135,12 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                       Type d'espace souhaité *
                     </Label>
                     <Select value={formData.typeEspace} onValueChange={(value) => handleInputChange('typeEspace', value)}>
-                      <SelectTrigger className="mt-1">
+                      <SelectTrigger className="mt-1 w-full">
                         <SelectValue placeholder="Sélectionnez un espace" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="w-full">
                         {espaces.map((espace) => (
-                          <SelectItem key={espace.value} value={espace.value}>
+                          <SelectItem key={espace.value} value={espace.value} className="text-sm">
                             {espace.label}
                           </SelectItem>
                         ))}
@@ -148,7 +148,7 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                     </Select>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-4">
                     <div>
                       <Label htmlFor="nombrePersonnes" className="text-sm font-medium text-gray-700">
                         Nombre de personnes
@@ -183,7 +183,7 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="date" className="text-sm font-medium text-gray-700">
                         Date souhaitée *
