@@ -83,12 +83,12 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Boutons d'action premium */}
+          {/* Boutons d'action premium avec effet lumineux */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in mb-16">
             <Button 
               onClick={scrollToReservation}
               size="lg"
-              className="bg-white text-sogem-orange hover:bg-gray-100 font-bold text-lg px-10 py-5 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-2 border-white/20"
+              className="bg-white text-sogem-orange hover:bg-gray-100 font-bold text-lg px-10 py-5 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-2 border-white/20 glow-effect"
             >
               Réserver maintenant
               <ArrowRight size={24} className="ml-3" />
@@ -97,7 +97,7 @@ const HeroSection = () => {
               variant="outline"
               size="lg"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-white text-white hover:bg-white hover:text-sogem-orange font-bold text-lg px-10 py-5 rounded-full backdrop-blur-sm bg-white/10 transition-all duration-300 hover:scale-105"
+              className="border-2 border-white text-white hover:bg-white hover:text-sogem-orange font-bold text-lg px-10 py-5 rounded-full backdrop-blur-sm bg-white/10 transition-all duration-300 hover:scale-105 glow-effect-outline"
             >
               Découvrir nos services
             </Button>

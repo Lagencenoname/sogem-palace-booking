@@ -120,7 +120,7 @@ const ServicesSection = () => {
             {amenities.map((amenity, index) => {
               const IconComponent = amenity.icon;
               return (
-                <div key={index} className="text-center">
+                <div key={index} className={`text-center ${index === 4 ? 'col-span-2 md:col-span-1' : ''}`}>
                   <div className="w-16 h-16 bg-sogem-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-3">
                     <IconComponent className="text-sogem-orange" size={24} />
                   </div>
