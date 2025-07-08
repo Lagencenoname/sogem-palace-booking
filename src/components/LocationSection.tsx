@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { MapPin, Clock, Car, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-
 const LocationSection = () => {
-  return (
-    <section id="localisation" className="py-20 bg-white">
+  return <section id="localisation" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* En-tête */}
         <div className="text-center mb-16">
@@ -86,18 +83,11 @@ const LocationSection = () => {
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2">Contact Direct</h3>
                   <p className="text-gray-600 mb-4">Besoin d'indications ?</p>
-                  <Button 
-                    onClick={() => window.open('tel:+2290140353479', '_self')}
-                    className="w-full bg-sogem-orange hover:bg-sogem-orange-dark mb-2"
-                  >
+                  <Button onClick={() => window.open('tel:+2290140353479', '_self')} className="w-full bg-sogem-orange hover:bg-sogem-orange-dark mb-2">
                     <Phone className="mr-2" size={16} />
                     +229 01 40 35 34 79
                   </Button>
-                  <Button 
-                    variant="outline"
-                    onClick={() => window.open('https://wa.me/2290140353479?text=Bonjour, j\'ai besoin d\'indications pour me rendre chez SOGEM PALACE.', '_blank')}
-                    className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
-                  >
+                  <Button variant="outline" onClick={() => window.open('https://wa.me/2290140353479?text=Bonjour, j\'ai besoin d\'indications pour me rendre chez SOGEM PALACE.', '_blank')} className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
                     WhatsApp
                   </Button>
                 </div>
@@ -110,16 +100,9 @@ const LocationSection = () => {
             <Card className="shadow-lg border-0 overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7963783657906!2d2.3206378741315197!3d6.420203724356898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1024a9fbd586dbef%3A0xc6990bb813932021!2sSOGEM%20PALACE!5e0!3m2!1sen!2sbj!4v1751989343449!5m2!1sen!2sbj" 
-                    width="100%" 
-                    height="500" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="rounded-lg"
-                  />
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7963783657906!2d2.3206378741315197!3d6.420203724356898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1024a9fbd586dbef%3A0xc6990bb813932021!2sSOGEM%20PALACE!5e0!3m2!1sen!2sbj!4v1751989343449!5m2!1sen!2sbj" width="100%" height="500" style={{
+                  border: 0
+                }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-lg" />
                   
                   {/* Overlay avec informations */}
                   <div className="absolute top-4 left-4 bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-4 max-w-xs">
@@ -136,29 +119,22 @@ const LocationSection = () => {
 
             {/* Boutons d'action pour la carte */}
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <Button 
-                onClick={() => window.open('https://www.google.com/maps/dir//SOGEM+PALACE,+Abomey-Calavi,+Benin/@6.420203724356898,2.3206378741315197,17z', '_blank')}
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
-              >
+              <Button onClick={() => window.open('https://www.google.com/maps/dir//SOGEM+PALACE,+Abomey-Calavi,+Benin/@6.420203724356898,2.3206378741315197,17z', '_blank')} className="flex-1 bg-blue-600 hover:bg-blue-700 text-white">
                 <MapPin className="mr-2" size={16} />
                 Itinéraire Google Maps
               </Button>
-              <Button 
-                variant="outline"
-                onClick={() => {
-                  if (navigator.share) {
-                    navigator.share({
-                      title: 'SOGEM PALACE - Localisation',
-                      text: 'Adresse de SOGEM PALACE',
-                      url: 'https://maps.google.com/?q=SOGEM+PALACE,+Abomey-Calavi,+Benin'
-                    });
-                  } else {
-                    navigator.clipboard.writeText('Fin clôture IITA, 2e Von à gauche en quittant Carrefour IITA pour Tankpè Carrefour, Tankpè, Abomey-Calavi - Bénin');
-                    alert('Adresse copiée dans le presse-papiers !');
-                  }
-                }}
-                className="flex-1 border-sogem-orange text-sogem-orange hover:bg-sogem-orange hover:text-white"
-              >
+              <Button variant="outline" onClick={() => {
+              if (navigator.share) {
+                navigator.share({
+                  title: 'SOGEM PALACE - Localisation',
+                  text: 'Adresse de SOGEM PALACE',
+                  url: 'https://maps.google.com/?q=SOGEM+PALACE,+Abomey-Calavi,+Benin'
+                });
+              } else {
+                navigator.clipboard.writeText('Fin clôture IITA, 2e Von à gauche en quittant Carrefour IITA pour Tankpè Carrefour, Tankpè, Abomey-Calavi - Bénin');
+                alert('Adresse copiée dans le presse-papiers !');
+              }
+            }} className="flex-1 border-sogem-orange text-sogem-orange hover:bg-sogem-orange hover:text-white">
                 Partager l'adresse
               </Button>
             </div>
@@ -180,21 +156,19 @@ const LocationSection = () => {
               <div className="w-12 h-12 bg-sogem-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
                 2
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">2e Von à gauche</h4>
-              <p className="text-sm text-gray-600">Tourner à gauche dans la 2e voie</p>
+              <h4 className="font-semibold text-gray-900 mb-2">Vous y êtes</h4>
+              <p className="text-sm text-gray-600">Tourner à gauche dans la 2e von.</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-sogem-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
                 3
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Fin clôture IITA</h4>
-              <p className="text-sm text-gray-600">SOGEM PALACE se trouve à la fin de la clôture IITA</p>
+              <h4 className="font-semibold text-gray-900 mb-2">2e Von à gauche</h4>
+              <p className="text-sm text-gray-600">SOGEM PALACE se trouve à votre droite </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LocationSection;
