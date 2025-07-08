@@ -75,26 +75,6 @@ const LocationSection = () => {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Contact */}
-            <Card className="shadow-lg border-sogem-orange border-2">
-              <CardContent className="p-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-sogem-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Phone className="text-white" size={24} />
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-2">Contact Direct</h3>
-                  <p className="text-gray-600 mb-4">Besoin d'indications ?</p>
-                  <Button onClick={() => window.open('tel:+2290140353479', '_self')} className="w-full bg-sogem-orange hover:bg-sogem-orange-dark mb-2">
-                    <Phone className="mr-2" size={16} />
-                    +229 01 40 35 34 79
-                  </Button>
-                  <Button variant="outline" onClick={() => window.open('https://wa.me/2290140353479?text=Bonjour, j\'ai besoin d\'indications pour me rendre chez SOGEM PALACE.', '_blank')} className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
-                    WhatsApp
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Carte Google Maps */}

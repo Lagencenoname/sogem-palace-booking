@@ -17,10 +17,10 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/20"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
       
-      {/* Motifs géométriques d'arrière-plan */}
-      <div className="absolute top-20 right-10 w-32 h-32 border border-white/20 rounded-full"></div>
-      <div className="absolute bottom-40 left-10 w-24 h-24 border border-white/10 rounded-full"></div>
-      <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-white/5 rounded-lg rotate-45"></div>
+      {/* Motifs géométriques d'arrière-plan - cachés sur mobile */}
+      <div className="absolute top-20 right-10 w-32 h-32 border border-white/20 rounded-full hidden md:block"></div>
+      <div className="absolute bottom-40 left-10 w-24 h-24 border border-white/10 rounded-full hidden md:block"></div>
+      <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-white/5 rounded-lg rotate-45 hidden md:block"></div>
       
       <div className="relative container mx-auto px-4 py-20 pt-24">
         <div className="max-w-5xl mx-auto text-center text-white">
@@ -34,34 +34,34 @@ const HeroSection = () => {
           {/* Titre principal avec couronne */}
           <div className="mb-8 animate-slide-in-left">
             <div className="flex items-center justify-center mb-4">
-              <Crown size={40} className="text-yellow-300 mr-4" />
-              <h1 className="text-5xl md:text-7xl font-bold">
+              <Crown size={40} className="text-yellow-300 mr-4 hidden sm:block" />
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold">
                 SOGEM PALACE
               </h1>
-              <Crown size={40} className="text-yellow-300 ml-4" />
+              <Crown size={40} className="text-yellow-300 ml-4 hidden sm:block" />
             </div>
             <div className="h-1 w-32 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6"></div>
-            <p className="text-2xl md:text-3xl font-light text-orange-100">
+            <p className="text-xl md:text-3xl font-light text-orange-100">
               L'espace idéal pour votre quiétude
             </p>
           </div>
 
           {/* Sous-titre premium */}
-          <p className="text-xl md:text-2xl mb-10 text-orange-100 max-w-4xl mx-auto animate-fade-in leading-relaxed">
+          <p className="text-lg md:text-2xl mb-10 text-orange-100 max-w-4xl mx-auto animate-fade-in leading-relaxed">
             Centre d'affaires & coworking premium au cœur de Tankpè
           </p>
 
           {/* Offre spéciale avec design premium */}
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 mb-12 max-w-3xl mx-auto animate-fade-in border border-white/20 shadow-2xl">
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-8 mb-12 max-w-3xl mx-auto animate-fade-in border border-white/20 shadow-2xl">
             <div className="flex items-center justify-center mb-6">
               <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center text-3xl">
                 🎯
               </div>
             </div>
-            <h3 className="text-3xl font-bold mb-6">Offre Accessible</h3>
-            <p className="text-xl mb-6 leading-relaxed">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">Offre Accessible</h3>
+            <p className="text-lg md:text-xl mb-6 leading-relaxed">
               "Louez selon votre budget, même à partir de{' '}
-              <span className="font-bold text-4xl bg-gradient-to-r from-yellow-200 to-white bg-clip-text text-transparent">
+              <span className="font-bold text-2xl md:text-4xl bg-gradient-to-r from-yellow-200 to-white bg-clip-text text-transparent">
                 1 000F
               </span>
               "
@@ -94,23 +94,23 @@ const HeroSection = () => {
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               className="border-2 border-white text-white hover:bg-white hover:text-sogem-orange font-bold text-lg px-10 py-5 rounded-full backdrop-blur-sm bg-white/10 transition-all duration-300 hover:scale-105"
             >
-              Découvrir nos services
+              <span className="text-white hover:text-sogem-orange">Découvrir nos services</span>
             </Button>
           </div>
 
           {/* Statistiques avec design premium */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
             {[
               { number: "5", label: "Types d'espaces" },
               { number: "100", label: "Places maximum" },
               { number: "7j/7", label: "Ouverture" },
               { number: "1000F", label: "À partir de" }
             ].map((stat, index) => (
-              <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-yellow-200 to-white bg-clip-text text-transparent">
+              <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/20">
+                <div className="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-yellow-200 to-white bg-clip-text text-transparent">
                   {stat.number}
                 </div>
-                <div className="text-sm text-orange-200 font-medium">{stat.label}</div>
+                <div className="text-xs md:text-sm text-orange-200 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -118,7 +118,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator premium */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
         <div className="w-8 h-12 border-2 border-white/60 rounded-full flex justify-center backdrop-blur-sm bg-white/10">
           <div className="w-1.5 h-4 bg-white/80 rounded-full mt-3 animate-pulse"></div>
         </div>

@@ -19,8 +19,8 @@ const GallerySection = () => {
     },
     {
       src: '/lovable-uploads/847886f7-b18b-4a0d-aa2a-817e9e621f9e.png',
-      alt: 'Espace de travail SOGEM PALACE',
-      title: 'Espace de Travail'
+      alt: 'Espace de fêtes SOGEM PALACE',
+      title: 'Espace de Fêtes'
     },
     {
       src: '/lovable-uploads/2bcfc518-217b-4eca-b862-cb0601b49d2a.png',
