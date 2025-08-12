@@ -53,7 +53,7 @@ const HeroSection = () => {
 
           {/* Sous-titre premium */}
           <p className="text-lg md:text-2xl mb-10 text-orange-100 max-w-4xl mx-auto animate-fade-in leading-relaxed">
-            Centre d'affaires & coworking premium au cœur de Tankpè
+            Centre d'affaires & coworking premium au cœur de Godomey
           </p>
 
           {/* Offre spéciale avec design premium */}
