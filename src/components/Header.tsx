@@ -42,8 +42,8 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-1 text-sm text-gray-600">
               <Phone size={16} />
-              <a href="tel:+2290140353479" className="hover:text-sogem-orange transition-colors">
-                +229 01 40 35 34 79
+              <a href="tel:+2290195957142" className="hover:text-sogem-orange transition-colors">
+                +229 01 95 95 71 42
               </a>
             </div>
             <Button 
@@ -75,8 +75,8 @@ const Header = () => {
               <div className="px-4 pt-4 border-t">
                 <div className="flex items-center space-x-2 mb-3">
                   <Phone size={16} />
-                  <a href="tel:+2290140353479" className="text-sogem-orange">
-                    +229 01 40 35 34 79
+                  <a href="tel:+2290195957142" className="text-sogem-orange">
+                    +229 01 95 95 71 42
                   </a>
                 </div>
                 <Button 

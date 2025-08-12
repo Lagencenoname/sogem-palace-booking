@@ -36,7 +36,7 @@ const WhatsAppButton = () => {
 
   const handleWhatsAppClick = () => {
     const message = "Bonjour ! Je souhaite avoir plus d'informations sur les services de SOGEM PALACE.";
-    const whatsappUrl = `https://wa.me/2290140353479?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/2290195957142?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

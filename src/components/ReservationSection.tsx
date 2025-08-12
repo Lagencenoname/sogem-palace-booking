@@ -67,7 +67,7 @@ ${formData.notes ? `- Notes : ${formData.notes}` : ''}
 
 Merci de me confirmer la disponibilité et le tarif exact.`;
 
-    const whatsappUrl = `https://wa.me/2290140353479?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/2290195957142?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -309,11 +309,11 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                   <h3 className="font-bold text-gray-900 mb-4">Besoin d'aide ?</h3>
                   <p className="text-gray-600 mb-4">Contactez-nous directement</p>
                   <Button 
-                    onClick={() => window.open('https://wa.me/2290140353479', '_blank')}
+                    onClick={() => window.open('https://wa.me/2290195957142', '_blank')}
                     className="w-full bg-green-600 hover:bg-green-700"
                   >
                     <MessageCircle className="mr-2" size={16} />
-                    WhatsApp : +229 01 40 35 34 79
+                    WhatsApp : +229 01 95 95 71 42
                   </Button>
                 </CardContent>
               </Card>
