@@ -41,6 +41,7 @@ const HeroSection = () => {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 drop-shadow-sm">
                   SOGEM PALACE
                 </h1>
+                <Crown size={40} className="text-yellow-500 mr-4 animate-bounce-slow" />
               </div>
               <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed max-w-lg">
                 L'espace idéal pour votre quiétude, entre confort et accessibilité.
