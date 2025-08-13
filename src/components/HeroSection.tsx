@@ -27,7 +27,6 @@ const HeroSection = () => {
             
             {/* Badge localisation - ajusté pour le fond blanc */}
             <div className="inline-flex items-center bg-gray-100 text-gray-700 rounded-full px-6 py-3 mb-8 border border-gray-200 shadow-sm">
-              <Star size={16} className="mr-2 text-yellow-500" />
               <MapPin size={16} className="mr-2 text-orange-500" />
               <span className="text-sm font-medium tracking-wide">
                 Tankpè, Abomey-Calavi - Bénin
