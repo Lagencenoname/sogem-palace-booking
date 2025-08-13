@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, MapPin, Wifi, Clock, Star, Crown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Le composant mis à jour pour une section Héro plus moderne et attrayante
+// Le composant mis à jour pour une section Héro avec un fond blanc
 const HeroSection = () => {
   const scrollToReservation = () => {
     const element = document.getElementById('reservation');
@@ -14,10 +14,9 @@ const HeroSection = () => {
   return (
     <section
       id="accueil"
-      className="relative min-h-screen flex items-center bg-gray-900 text-white overflow-hidden"
+      className="relative min-h-screen flex items-center bg-white text-gray-800 overflow-hidden"
     >
-      {/* Fond avec un dégradé subtil pour un effet premium */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 opacity-90 z-0"></div>
+      {/* Pas de fond dégradé pour le fond blanc */}
       
       {/* Contenu principal de la section */}
       <div className="relative container mx-auto px-4 py-20 pt-24 z-10">
@@ -26,30 +25,30 @@ const HeroSection = () => {
           {/* Colonne texte */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left animate-fade-in-up">
             
-            {/* Badge localisation - plus élégant */}
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm text-gray-200 rounded-full px-6 py-3 mb-8 border border-white/20 shadow-sm">
-              <Star size={16} className="mr-2 text-yellow-400" />
-              <MapPin size={16} className="mr-2 text-orange-400" />
+            {/* Badge localisation - ajusté pour le fond blanc */}
+            <div className="inline-flex items-center bg-gray-100 text-gray-700 rounded-full px-6 py-3 mb-8 border border-gray-200 shadow-sm">
+              <Star size={16} className="mr-2 text-yellow-500" />
+              <MapPin size={16} className="mr-2 text-orange-500" />
               <span className="text-sm font-medium tracking-wide">
                 Tankpè, Abomey-Calavi - Bénin
               </span>
             </div>
 
-            {/* Titre et sous-titre */}
+            {/* Titre et sous-titre - ajusté pour le fond blanc */}
             <div className="mb-8">
               <div className="flex items-center justify-center md:justify-start mb-4">
                 <Crown size={40} className="text-yellow-500 mr-4 animate-bounce-slow" />
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white drop-shadow-md">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 drop-shadow-sm">
                   SOGEM PALACE
                 </h1>
               </div>
-              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed max-w-lg">
+              <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed max-w-lg">
                 L'espace idéal pour votre quiétude, entre confort et accessibilité.
               </p>
             </div>
 
-            {/* Offre accessible - design amélioré */}
-            <div className="bg-orange-500/90 text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg w-full transform transition duration-300 hover:scale-105 shadow-xl hover:shadow-2xl">
+            {/* Offre accessible - design ajusté */}
+            <div className="bg-orange-600 text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg w-full transform transition duration-300 hover:scale-105 shadow-xl hover:shadow-2xl">
               <div className="flex items-center justify-center mb-6">
                 <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center text-3xl">
                   <Crown size={32} className="text-white" />
@@ -79,13 +78,13 @@ const HeroSection = () => {
                 alt="Sogem Palace"
                 className="w-full h-auto max-h-[500px] object-cover"
                 // Placeholder pour une meilleure expérience
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/500x500/0d0c0d/b3a6a1?text=SOGEM+PALACE"; }}
+                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/500x500/fff/363636?text=SOGEM+PALACE"; }}
               />
             </div>
           </div>
         </div>
 
-        {/* Boutons centrés en bas de la section - design amélioré */}
+        {/* Boutons centrés en bas de la section - design ajusté */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
           <Button 
             onClick={scrollToReservation}
@@ -99,7 +98,7 @@ const HeroSection = () => {
             variant="outline"
             size="lg"
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            className="border-2 border-gray-400 text-gray-300 hover:bg-white/10 hover:text-white font-bold text-lg px-10 py-5 rounded-full transform transition duration-300 hover:-translate-y-1"
+            className="border-2 border-gray-400 text-gray-600 hover:bg-gray-100 font-bold text-lg px-10 py-5 rounded-full transform transition duration-300 hover:-translate-y-1"
           >
             Découvrir nos services
           </Button>
