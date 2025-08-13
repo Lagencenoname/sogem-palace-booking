@@ -16,10 +16,10 @@ const HeroSection = () => {
         
         {/* Colonne gauche : texte + offre */}
         <div className="flex-1 text-gray-800 text-center lg:text-left">
-          {/* Badge localisation (fond plus sombre) */}
-          <div className="inline-flex items-center bg-gray-800 text-white rounded-full px-6 py-3 mb-8 border border-gray-700 shadow-sm">
-            <Star size={16} className="mr-2 text-yellow-400" />
-            <MapPin size={16} className="mr-2 text-orange-400" />
+          {/* Badge localisation */}
+          <div className="inline-flex items-center bg-gray-100 rounded-full px-6 py-3 mb-8 border border-gray-200 shadow-sm">
+            <Star size={16} className="mr-2 text-yellow-500" />
+            <MapPin size={16} className="mr-2 text-gray-500" />
             <span className="text-sm font-medium">Tankpè, Abomey-Calavi - Bénin</span>
           </div>
 
@@ -27,18 +27,18 @@ const HeroSection = () => {
           <div className="mb-8">
             <div className="flex items-center justify-center lg:justify-start mb-4">
               <Crown size={40} className="text-yellow-500 mr-4 hidden sm:block" />
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
                 SOGEM PALACE
               </h1>
               <Crown size={40} className="text-yellow-500 ml-4 hidden sm:block" />
             </div>
-            <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed">
+            <p className="text-xl md:text-2xl font-light text-gray-600">
               L'espace idéal pour votre quiétude
             </p>
           </div>
 
-          {/* Offre accessible (orange conservé) */}
-          <div className="bg-orange-500 text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg mx-auto lg:mx-0 shadow-xl">
+          {/* Offre accessible */}
+          <div className="bg-orange-500 text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg mx-auto lg:mx-0 shadow-lg">
             <div className="flex items-center justify-center mb-6">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-3xl">
                 🎯
