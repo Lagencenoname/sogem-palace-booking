@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, MapPin, Wifi, Clock, Star, Crown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+// Le composant mis à jour pour une section Héro plus moderne et attrayante
 const HeroSection = () => {
   const scrollToReservation = () => {
     const element = document.getElementById('reservation');
@@ -13,87 +14,92 @@ const HeroSection = () => {
   return (
     <section
       id="accueil"
-      className="relative min-h-screen bg-white overflow-hidden"
+      className="relative min-h-screen flex items-center bg-gray-900 text-white overflow-hidden"
     >
-      <div className="relative container mx-auto px-4 py-20 pt-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto text-gray-800">
+      {/* Fond avec un dégradé subtil pour un effet premium */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 opacity-90 z-0"></div>
+      
+      {/* Contenu principal de la section */}
+      <div className="relative container mx-auto px-4 py-20 pt-24 z-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           
           {/* Colonne texte */}
-          <div className="flex flex-col items-center md:items-center text-center">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left animate-fade-in-up">
             
-            {/* Badge localisation */}
-            <div className="inline-flex items-center bg-gray-700 text-white rounded-full px-6 py-3 mb-8 border border-gray-600 shadow-sm">
+            {/* Badge localisation - plus élégant */}
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm text-gray-200 rounded-full px-6 py-3 mb-8 border border-white/20 shadow-sm">
               <Star size={16} className="mr-2 text-yellow-400" />
               <MapPin size={16} className="mr-2 text-orange-400" />
-              <span className="text-sm font-medium">
+              <span className="text-sm font-medium tracking-wide">
                 Tankpè, Abomey-Calavi - Bénin
               </span>
             </div>
 
-            {/* Titre */}
+            {/* Titre et sous-titre */}
             <div className="mb-8">
-              <div className="flex items-center justify-center mb-4">
-                <Crown size={36} className="text-yellow-500 mr-4 hidden sm:block" />
-                <h1 className="text-4xl sm:text-5xl md:text-[2.75rem] font-bold">
+              <div className="flex items-center justify-center md:justify-start mb-4">
+                <Crown size={40} className="text-yellow-500 mr-4 animate-bounce-slow" />
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white drop-shadow-md">
                   SOGEM PALACE
                 </h1>
-                <Crown size={36} className="text-yellow-500 ml-4 hidden sm:block" />
               </div>
-              <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed">
-                L'espace idéal pour votre quiétude
+              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed max-w-lg">
+                L'espace idéal pour votre quiétude, entre confort et accessibilité.
               </p>
             </div>
 
-            {/* Offre accessible */}
-            <div className="bg-orange-500 text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg shadow-lg">
+            {/* Offre accessible - design amélioré */}
+            <div className="bg-orange-500/90 text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg w-full transform transition duration-300 hover:scale-105 shadow-xl hover:shadow-2xl">
               <div className="flex items-center justify-center mb-6">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-3xl">
-                  🎯
+                <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center text-3xl">
+                  <Crown size={32} className="text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-6">Offre Accessible</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 drop-shadow-sm">Offre Accessible</h3>
               <p className="text-base md:text-lg mb-6 leading-relaxed">
-                Louez selon votre budget, même à partir de{' '}
-                <span className="font-bold text-3xl">1 000F</span>
+                Louez selon votre budget, à partir de{' '}
+                <span className="font-bold text-4xl text-yellow-200 drop-shadow-md">1 000F</span>
               </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
                 <div className="flex items-center bg-white/20 rounded-full px-4 py-2">
-                  <Wifi size={16} className="mr-2" /> Wi-Fi haut débit
+                  <Wifi size={16} className="mr-2 text-yellow-200" /> Wi-Fi haut débit
                 </div>
                 <div className="flex items-center bg-white/20 rounded-full px-4 py-2">
-                  <Clock size={16} className="mr-2" /> Ouvert 7j/7
+                  <Clock size={16} className="mr-2 text-yellow-200" /> Ouvert 7j/7
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Colonne image */}
-          <div className="flex justify-center">
-            <div className="rounded-3xl overflow-hidden shadow-2xl w-full max-w-lg">
+          {/* Colonne image - avec un effet de survol */}
+          <div className="flex justify-center md:justify-end">
+            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl w-full max-w-lg transform transition duration-300 hover:scale-[1.02]">
               <img
                 src="/lovable-uploads/sogem-offers.jpg"
                 alt="Sogem Palace"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-auto max-h-[500px] object-cover"
+                // Placeholder pour une meilleure expérience
+                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/500x500/0d0c0d/b3a6a1?text=SOGEM+PALACE"; }}
               />
             </div>
           </div>
         </div>
 
-        {/* Boutons centrés en bas de la section */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
-          <Button 
+        {/* Boutons centrés en bas de la section - design amélioré */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
+          <Button 
             onClick={scrollToReservation}
             size="lg"
-            className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold text-lg px-10 py-5 rounded-full shadow-lg border-2 border-yellow-500"
+            className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold text-lg px-10 py-5 rounded-full shadow-lg border-2 border-yellow-500 transform transition duration-300 hover:-translate-y-1"
           >
             Réserver maintenant
             <ArrowRight size={24} className="ml-3" />
           </Button>
-          <Button 
+          <Button 
             variant="outline"
             size="lg"
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            className="border-2 border-gray-300 text-gray-700 hover:bg-gray-100 font-bold text-lg px-10 py-5 rounded-full"
+            className="border-2 border-gray-400 text-gray-300 hover:bg-white/10 hover:text-white font-bold text-lg px-10 py-5 rounded-full transform transition duration-300 hover:-translate-y-1"
           >
             Découvrir nos services
           </Button>
