@@ -1,10 +1,41 @@
-
-import React from 'react';
-import { MapPin, Clock, Car, Phone } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Clock, Car, Phone, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const LocationSection = () => {
+  const [message, setMessage] = useState('');
+
+  const handleShare = () => {
+    const addressText = "Fin clôture IITA, 2e Voie à gauche en quittant Carrefour IITA pour Tankpè Carrefour, Tankpè, Abomey-Calavi - Bénin";
+    if (navigator.share) {
+      navigator.share({
+        title: 'SOGEM PALACE - Localisation',
+        text: 'Adresse de SOGEM PALACE',
+        url: 'https://maps.google.com/?q=SOGEM+PALACE,+Abomey-Calavi,+Benin'
+      }).catch(console.error);
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addressText).then(() => {
+        setMessage('Adresse copiée !');
+        setTimeout(() => setMessage(''), 3000);
+      }).catch(console.error);
+    } else {
+      // Fallback pour les navigateurs qui ne supportent pas l'API moderne
+      const textarea = document.createElement('textarea');
+      textarea.value = addressText;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        setMessage('Adresse copiée !');
+        setTimeout(() => setMessage(''), 3000);
+      } catch (err) {
+        console.error('Échec de la copie :', err);
+      }
+      document.body.removeChild(textarea);
+    }
+  };
+
   return (
     <section id="localisation" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -23,8 +54,8 @@ const LocationSection = () => {
             <Card className="shadow-lg border-0">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-sogem-orange bg-opacity-10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-sogem-orange" size={24} />
+                  <div className="w-12 h-12 bg-sogem-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="text-white" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-2">Adresse</h3>
@@ -43,8 +74,8 @@ const LocationSection = () => {
             <Card className="shadow-lg border-0">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-sogem-orange bg-opacity-10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-sogem-orange" size={24} />
+                  <div className="w-12 h-12 bg-sogem-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Clock className="text-white" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-2">Horaires</h3>
@@ -61,8 +92,8 @@ const LocationSection = () => {
             <Card className="shadow-lg border-0">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-sogem-orange bg-opacity-10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Car className="text-sogem-orange" size={24} />
+                  <div className="w-12 h-12 bg-sogem-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Car className="text-white" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-2">Accès & Parking</h3>
@@ -108,52 +139,45 @@ const LocationSection = () => {
 
             {/* Boutons d'action pour la carte */}
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <Button onClick={() => window.open('https://www.google.com/maps/dir//SOGEM+PALACE,+Abomey-Calavi,+Benin/@6.420203724356898,2.3206378741315197,17z', '_blank')} className="flex-1 bg-blue-600 hover:bg-blue-700 text-white">
+              <Button onClick={() => window.open('https://www.google.com/maps/dir//SOGEM+PALACE,+Abomey-Calavi,+Benin/@6.420203724356898,2.3206378741315197,17z', '_blank')} className="flex-1 bg-sogem-orange hover:bg-sogem-gold text-white">
                 <MapPin className="mr-2" size={16} />
                 Itinéraire Google Maps
               </Button>
-              <Button variant="outline" onClick={() => {
-                if (navigator.share) {
-                  navigator.share({
-                    title: 'SOGEM PALACE - Localisation',
-                    text: 'Adresse de SOGEM PALACE',
-                    url: 'https://maps.google.com/?q=SOGEM+PALACE,+Abomey-Calavi,+Benin'
-                  });
-                } else {
-                  navigator.clipboard.writeText('Fin clôture IITA, 2e Voie à gauche en quittant Carrefour IITA pour Tankpè Carrefour, Tankpè, Abomey-Calavi - Bénin');
-                  alert('Adresse copiée dans le presse-papiers !');
-                }
-              }} className="flex-1 border-sogem-orange text-sogem-orange hover:bg-sogem-orange hover:text-white">
+              <Button variant="outline" onClick={handleShare} className="flex-1 border-sogem-orange text-sogem-orange hover:bg-sogem-orange hover:text-white relative">
+                <Share2 className="mr-2" size={16} />
                 Partager l'adresse
+                {message && (
+                  <span className="absolute bottom-1 right-2 text-xs text-green-500 font-semibold">{message}</span>
+                )}
               </Button>
             </div>
           </div>
         </div>
 
         {/* Points de repère */}
-        <div className="mt-16 bg-gray-50 rounded-2xl p-8">
+        <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
           <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Comment nous trouver</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="w-12 h-12 bg-sogem-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
+              <div className="w-12 h-12 bg-sogem-gold rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
                 1
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Depuis le Carrefour IITA</h4>
               <p className="text-sm text-gray-600">Prendre la direction de Tankpè Carrefour</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-sogem-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
+              <div className="w-12 h-12 bg-sogem-gold rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
                 2
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Vous y êtes</h4>
+              <h4 className="font-semibold text-gray-900 mb-2">Tourner à gauche</h4>
               <p className="text-sm text-gray-600">Tourner à gauche dans la 2e voie.</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-sogem-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
+              <div className="w-12 h-12 bg-sogem-gold rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
                 3
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">2e Voie à gauche</h4>
-              <p className="text-sm text-gray-600">SOGEM PALACE se trouve à votre droite </p>
+              <h4 className="font-semibold text-gray-900 mb-2">SOGEM PALACE</h4>
+              <p className="text-sm text-gray-600">SOGEM PALACE se trouve à votre droite.</p>
             </div>
           </div>
         </div>
