@@ -91,8 +91,9 @@ const ServicesSection = () => {
                   />
                 </div>
                 <CardHeader className="pb-4">
-                  <div className="w-12 h-12 bg-sogem-orange bg-opacity-10 rounded-xl flex items-center justify-center mb-4">
-                    <Crown className="text-sogem-orange" size={24} />
+                  {/* Couronne dorée pour les services */}
+                  <div className="w-12 h-12 bg-sogem-gold rounded-xl flex items-center justify-center mb-4">
+                    <Crown className="text-white" size={24} />
                   </div>
                   <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
                   {service.capacity && (
@@ -137,8 +138,9 @@ const ServicesSection = () => {
               const IconComponent = amenity.icon;
               return (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-sogem-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <IconComponent className="text-sogem-gold" size={28} />
+                  {/* Fond doré et icône noire */}
+                  <div className="w-16 h-16 bg-sogem-gold rounded-full flex items-center justify-center mx-auto mb-3">
+                    <IconComponent className="text-gray-900" size={28} />
                   </div>
                   <p className="text-sm font-medium text-gray-700">{amenity.name}</p>
                 </div>
