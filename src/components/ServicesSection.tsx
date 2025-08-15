@@ -138,9 +138,9 @@ const ServicesSection = () => {
               const IconComponent = amenity.icon;
               return (
                 <div key={index} className="text-center">
-                  {/* Fond doré et icône noire */}
+                  {/* Fond doré et icône blanche */}
                   <div className="w-16 h-16 bg-sogem-gold rounded-full flex items-center justify-center mx-auto mb-3">
-                    <IconComponent className="text-gray-900" size={28} />
+                    <IconComponent className="text-white" size={28} />
                   </div>
                   <p className="text-sm font-medium text-gray-700">{amenity.name}</p>
                 </div>
