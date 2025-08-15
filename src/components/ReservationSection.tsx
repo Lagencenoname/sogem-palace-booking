@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Calendar, Clock, Users, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,8 +6,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/components/ui/use-toast';
 
 const ReservationSection = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     nom: '',
     telephone: '',
@@ -20,6 +21,9 @@ const ReservationSection = () => {
     duree: '',
     notes: ''
   });
+  
+  // État pour gérer la visibilité du champ de saisie de la durée personnalisée
+  const [showCustomDurationInput, setShowCustomDurationInput] = useState(false);
 
   const espaces = [
     { value: 'coworking-jour', label: 'Coworking (Jour 8h-17h)' },
@@ -43,16 +47,26 @@ const ReservationSection = () => {
     { value: 'personnalisee', label: 'Personnalisée' }
   ];
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
+  const handleInputChange = (field, value) => {
+    // Si la durée est personnalisée, affiche le champ de saisie
+    if (field === 'duree' && value === 'personnalisee') {
+      setShowCustomDurationInput(true);
+      setFormData(prev => ({ ...prev, [field]: '' })); // Réinitialiser la durée pour la saisir dans le nouveau champ
+    } else if (field === 'duree') {
+      setShowCustomDurationInput(false);
+      setFormData(prev => ({ ...prev, [field]: value }));
+    } else {
+      setFormData(prev => ({ ...prev, [field]: value }));
+    }
   };
 
   const handleWhatsAppReservation = () => {
     if (!formData.nom || !formData.telephone || !formData.typeEspace || !formData.date) {
-      alert('Veuillez remplir au minimum les champs obligatoires (nom, téléphone, type d\'espace et date)');
+      toast({
+        title: "Champs obligatoires manquants",
+        description: "Veuillez remplir au minimum les champs nom, téléphone, type d'espace et date.",
+        variant: "destructive",
+      });
       return;
     }
 
@@ -93,7 +107,7 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Formulaire */}
             <Card className="shadow-xl border-0">
-              <CardHeader className="bg-sogem-orange text-white rounded-t-lg">
+              <CardHeader className="bg-sogem-gold text-white rounded-t-lg">
                 <CardTitle className="text-2xl font-bold flex items-center">
                   <Calendar className="mr-3" size={24} />
                   Formulaire de réservation
@@ -205,6 +219,16 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                           ))}
                         </SelectContent>
                       </Select>
+                      {/* Champ de saisie pour la durée personnalisée */}
+                      {showCustomDurationInput && (
+                        <Input
+                          type="text"
+                          placeholder="Ex: 5 heures, 1 journée"
+                          value={formData.duree}
+                          onChange={(e) => handleInputChange('duree', e.target.value)}
+                          className="mt-2"
+                        />
+                      )}
                     </div>
                   </div>
 
@@ -282,7 +306,7 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="font-medium">Lundi - Dimanche</span>
-                      <span className="text-sogem-orange font-semibold">8h - 22h</span>
+                      <span className="text-sogem-gold font-semibold">8h - 22h</span>
                     </div>
                     <div className="text-sm text-gray-600">
                       <p>• Coworking jour : 8h - 17h</p>
@@ -304,21 +328,21 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-sogem-orange text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                      <div className="w-6 h-6 bg-sogem-gold text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
                       <div>
                         <h4 className="font-medium text-gray-900">Remplissez le formulaire</h4>
                         <p className="text-sm text-gray-600">Indiquez vos besoins et préférences</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-sogem-orange text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                      <div className="w-6 h-6 bg-sogem-gold text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
                       <div>
                         <h4 className="font-medium text-gray-900">Envoi via WhatsApp</h4>
                         <p className="text-sm text-gray-600">Votre demande nous parvient instantanément</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-sogem-orange text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                      <div className="w-6 h-6 bg-sogem-gold text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
                       <div>
                         <h4 className="font-medium text-gray-900">Confirmation rapide</h4>
                         <p className="text-sm text-gray-600">Nous confirmons la disponibilité sous 30 minutes</p>
@@ -329,7 +353,7 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
               </Card>
 
               {/* Contact direct */}
-              <Card className="shadow-lg border-sogem-orange border-2">
+              <Card className="shadow-lg border-sogem-gold border-2">
                 <CardContent className="p-6 text-center">
                   <h3 className="font-bold text-gray-900 mb-4">Besoin d'aide ?</h3>
                   <p className="text-gray-600 mb-4">Contactez-nous directement</p>
