@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, MapPin, Wifi, Clock, Star, Crown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Le composant mis à jour pour une section Héro avec un fond blanc
+// Le composant a été ajusté pour une meilleure adaptabilité et un alignement centralisé.
 const HeroSection = () => {
   const scrollToReservation = () => {
     const element = document.getElementById('reservation');
@@ -16,16 +16,14 @@ const HeroSection = () => {
       id="accueil"
       className="relative min-h-screen flex items-center bg-white text-gray-800 overflow-hidden"
     >
-      {/* Pas de fond dégradé pour le fond blanc */}
-      
       {/* Contenu principal de la section */}
       <div className="relative container mx-auto px-4 py-20 pt-24 z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           
-          {/* Colonne texte */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left animate-fade-in-up">
+          {/* Colonne texte : centrée sur mobile et PC */}
+          <div className="flex flex-col items-center text-center animate-fade-in-up">
             
-            {/* Badge localisation - ajusté pour le fond blanc */}
+            {/* Badge localisation */}
             <div className="inline-flex items-center bg-gray-100 text-gray-700 rounded-full px-6 py-3 mb-8 border border-gray-200 shadow-sm">
               <MapPin size={16} className="mr-2 text-orange-500" />
               <span className="text-sm font-medium tracking-wide">
@@ -33,21 +31,21 @@ const HeroSection = () => {
               </span>
             </div>
 
-            {/* Titre et sous-titre - ajusté pour le fond blanc */}
+            {/* Titre et sous-titre : La taille du titre a été réduite sur mobile pour qu'il tienne sur une seule ligne. */}
             <div className="mb-8">
-              <div className="flex items-center justify-center md:justify-start mb-4">
-                <Crown size={40} className="text-sogem-gold mr-4 animate-bounce-slow" />
-                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 drop-shadow-sm">
+              <div className="flex items-center justify-center mb-4">
+                <Crown size={28} className="text-sogem-gold mr-3 sm:mr-4 animate-bounce-slow" />
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none text-gray-900 drop-shadow-sm whitespace-nowrap">
                   SOGEM PALACE
                 </h1>
-                <Crown size={40} className="text-sogem-gold mr-4 animate-bounce-slow" />
+                <Crown size={28} className="text-sogem-gold ml-3 sm:ml-4 animate-bounce-slow" />
               </div>
               <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed max-w-lg">
                 L'espace idéal pour votre quiétude, entre confort et accessibilité.
               </p>
             </div>
 
-            {/* Offre accessible - design ajusté */}
+            {/* Offre accessible */}
             <div className="bg-sogem-orange text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg w-full transform transition duration-300 hover:scale-105 shadow-xl hover:shadow-2xl">
               <div className="flex items-center justify-center mb-6">
                 <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center text-3xl">
@@ -70,7 +68,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Colonne image - avec un effet de survol */}
+          {/* Colonne image */}
           <div className="flex justify-center md:justify-end">
             <div className="rounded-[2.5rem] overflow-hidden shadow-2xl w-full max-w-lg transform transition duration-300 hover:scale-[1.02]">
               <img
@@ -88,7 +86,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Boutons centrés en bas de la section - design ajusté */}
+        {/* Boutons centrés en bas de la section */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
           <Button 
             onClick={scrollToReservation}
