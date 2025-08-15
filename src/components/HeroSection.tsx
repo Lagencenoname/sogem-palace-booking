@@ -46,18 +46,20 @@ const HeroSection = () => {
             </div>
 
             {/* Offre accessible */}
-            <div className="bg-sogem-orange text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg w-full transform transition duration-300 hover:scale-105 shadow-xl hover:shadow-2xl">
+            <div className="bg-sogem-orange text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg w-full transform transition duration-300 hover:scale-105 shadow-xl hover:shadow-2xl flex flex-col items-center">
               <div className="flex items-center justify-center mb-6">
                 <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center text-3xl">
                   <Crown size={32} className="text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 drop-shadow-sm">Offre Accessible</h3>
-              <p className="text-base md:text-lg mb-6 leading-relaxed">
-                Louez selon votre budget, à partir de{' '}
-                <span className="font-bold text-4xl text-sogem-gold drop-shadow-md">1 000F</span>
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 drop-shadow-sm">Offre Accessible</h3>
+              <p className="text-base md:text-lg mb-2 leading-relaxed">
+                Louez selon votre budget, à partir de
               </p>
-              <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
+              <p className="font-bold text-4xl text-sogem-gold drop-shadow-md mb-6">
+                1 000F
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <div className="flex items-center bg-white/20 rounded-full px-4 py-2">
                   <Wifi size={16} className="mr-2 text-sogem-gold" /> Wi-Fi haut débit
                 </div>
