@@ -36,11 +36,11 @@ const HeroSection = () => {
             {/* Titre et sous-titre - ajusté pour le fond blanc */}
             <div className="mb-8">
               <div className="flex items-center justify-center md:justify-start mb-4">
-                <Crown size={40} className="text-yellow-500 mr-4 animate-bounce-slow" />
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 drop-shadow-sm">
+                <Crown size={40} className="text-sogem-gold mr-4 animate-bounce-slow" />
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 drop-shadow-sm">
                   SOGEM PALACE
                 </h1>
-                <Crown size={40} className="text-yellow-500 mr-4 animate-bounce-slow" />
+                <Crown size={40} className="text-sogem-gold mr-4 animate-bounce-slow" />
               </div>
               <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed max-w-lg">
                 L'espace idéal pour votre quiétude, entre confort et accessibilité.
@@ -48,7 +48,7 @@ const HeroSection = () => {
             </div>
 
             {/* Offre accessible - design ajusté */}
-            <div className="bg-orange-600 text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg w-full transform transition duration-300 hover:scale-105 shadow-xl hover:shadow-2xl">
+            <div className="bg-sogem-orange text-white rounded-3xl p-6 md:p-8 mb-12 max-w-lg w-full transform transition duration-300 hover:scale-105 shadow-xl hover:shadow-2xl">
               <div className="flex items-center justify-center mb-6">
                 <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center text-3xl">
                   <Crown size={32} className="text-white" />
@@ -57,14 +57,14 @@ const HeroSection = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-6 drop-shadow-sm">Offre Accessible</h3>
               <p className="text-base md:text-lg mb-6 leading-relaxed">
                 Louez selon votre budget, à partir de{' '}
-                <span className="font-bold text-4xl text-yellow-200 drop-shadow-md">1 000F</span>
+                <span className="font-bold text-4xl text-sogem-gold drop-shadow-md">1 000F</span>
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
                 <div className="flex items-center bg-white/20 rounded-full px-4 py-2">
-                  <Wifi size={16} className="mr-2 text-yellow-200" /> Wi-Fi haut débit
+                  <Wifi size={16} className="mr-2 text-sogem-gold" /> Wi-Fi haut débit
                 </div>
                 <div className="flex items-center bg-white/20 rounded-full px-4 py-2">
-                  <Clock size={16} className="mr-2 text-yellow-200" /> Ouvert 7j/7
+                  <Clock size={16} className="mr-2 text-sogem-gold" /> Ouvert 7j/7
                 </div>
               </div>
             </div>
@@ -78,7 +78,11 @@ const HeroSection = () => {
                 alt="Sogem Palace"
                 className="w-full h-auto max-h-[500px] object-cover"
                 // Placeholder pour une meilleure expérience
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/500x500/fff/363636?text=SOGEM+PALACE"; }}
+                onError={(e) => { 
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null; 
+                  target.src = "https://placehold.co/500x500/fff/363636?text=SOGEM+PALACE"; 
+                }}
               />
             </div>
           </div>
@@ -86,19 +90,19 @@ const HeroSection = () => {
 
         {/* Boutons centrés en bas de la section - design ajusté */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
-          <Button 
+          <Button 
             onClick={scrollToReservation}
             size="lg"
-            className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold text-lg px-10 py-5 rounded-full shadow-lg border-2 border-yellow-500 transform transition duration-300 hover:-translate-y-1"
+            className="bg-sogem-gold hover:bg-sogem-gold/90 text-white font-bold text-lg px-10 py-5 rounded-full shadow-lg border-2 border-sogem-gold transform transition duration-300 hover:-translate-y-1 glow-effect"
           >
             Réserver maintenant
             <ArrowRight size={24} className="ml-3" />
           </Button>
-          <Button 
+          <Button 
             variant="outline"
             size="lg"
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            className="border-2 border-gray-400 text-gray-600 hover:bg-gray-100 font-bold text-lg px-10 py-5 rounded-full transform transition duration-300 hover:-translate-y-1"
+            className="border-2 border-sogem-orange text-sogem-orange hover:bg-sogem-orange hover:text-white font-bold text-lg px-10 py-5 rounded-full transform transition duration-300 hover:-translate-y-1 glow-effect-outline"
           >
             Découvrir nos services
           </Button>

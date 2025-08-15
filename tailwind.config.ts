@@ -26,8 +26,8 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#f4511e',
-					foreground: '#ffffff'
+					DEFAULT: 'hsl(var(--primary))',
+					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -64,9 +64,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				sogem: {
-					orange: '#f4511e',
-					'orange-light': '#ff7043',
-					'orange-dark': '#d84315'
+					orange: 'hsl(var(--sogem-orange))',
+					gold: 'hsl(var(--sogem-gold))',
+					white: 'hsl(var(--sogem-white))'
 				}
 			},
 			borderRadius: {

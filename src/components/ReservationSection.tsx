@@ -13,6 +13,7 @@ const ReservationSection = () => {
     nom: '',
     telephone: '',
     typeEspace: '',
+    typeClimat: '',
     nombrePersonnes: '',
     date: '',
     heure: '',
@@ -21,12 +22,17 @@ const ReservationSection = () => {
   });
 
   const espaces = [
-    { value: 'coworking-jour', label: 'Coworking (Jour 8h-17h) - 1 000F' },
-    { value: 'coworking-soir', label: 'Coworking (Soir 17h-22h) - 1 500F' },
-    { value: 'bureau-prive', label: 'Bureau privé - 2 500F/heure' },
-    { value: 'reunion-15', label: 'Salle réunion 15p - 5 000F/h' },
-    { value: 'conference-50', label: 'Salle conférence 50p - 10 000F/h' },
-    { value: 'evenement-100', label: 'Grande salle 100p - 15 000F/h' }
+    { value: 'coworking-jour', label: 'Coworking (Jour 8h-17h)' },
+    { value: 'coworking-soir', label: 'Coworking (Soir 17h-22h)' },
+    { value: 'bureau-prive', label: 'Bureau privé' },
+    { value: 'reunion-15', label: 'Salle réunion 15 places' },
+    { value: 'conference-50', label: 'Salle conférence 50 places' },
+    { value: 'evenement-100', label: 'Grande salle 100 places' }
+  ];
+
+  const typeClimat = [
+    { value: 'ventile', label: 'Ventilé' },
+    { value: 'climatise', label: 'Climatisé' }
   ];
 
   const durees = [
@@ -34,8 +40,7 @@ const ReservationSection = () => {
     { value: '2h', label: '2 heures' },
     { value: '3h', label: '3 heures' },
     { value: '4h', label: '4 heures' },
-    { value: 'demi-journee', label: 'Demi-journée' },
-    { value: 'journee', label: 'Journée complète' }
+    { value: 'personnalisee', label: 'Personnalisée' }
   ];
 
   const handleInputChange = (field: string, value: string) => {
@@ -52,6 +57,7 @@ const ReservationSection = () => {
     }
 
     const espaceLabel = espaces.find(e => e.value === formData.typeEspace)?.label || formData.typeEspace;
+    const climatLabel = typeClimat.find(c => c.value === formData.typeClimat)?.label || formData.typeClimat;
     
     const message = `Bonjour, je souhaite réserver un espace chez SOGEM PALACE :
 
@@ -59,6 +65,7 @@ const ReservationSection = () => {
 - Nom : ${formData.nom}
 - Téléphone : ${formData.telephone}
 - Type d'espace : ${espaceLabel}
+- Type de climatisation : ${climatLabel || 'Non spécifié'}
 - Nombre de personnes : ${formData.nombrePersonnes || 'Non spécifié'}
 - Date : ${formData.date}
 - Heure : ${formData.heure || 'À convenir'}
@@ -148,7 +155,25 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                     </Select>
                   </div>
 
-                  <div className="grid grid-cols-1 gap-4">
+                  <div>
+                    <Label htmlFor="typeClimat" className="text-sm font-medium text-gray-700">
+                      Type de climatisation
+                    </Label>
+                    <Select value={formData.typeClimat} onValueChange={(value) => handleInputChange('typeClimat', value)}>
+                      <SelectTrigger className="mt-1">
+                        <SelectValue placeholder="Choisir le type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {typeClimat.map((type) => (
+                          <SelectItem key={type.value} value={type.value}>
+                            {type.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="nombrePersonnes" className="text-sm font-medium text-gray-700">
                         Nombre de personnes

@@ -12,14 +12,16 @@ const ServicesSection = () => {
       priceEvening: "1 500F",
       durationEvening: "soir (17h-22h)",
       icon: Users,
-      description: "Espace de travail partagé dans un environnement stimulant"
+      description: "Espace de travail partagé dans un environnement stimulant",
+      image: "/lovable-uploads/coworking-espace.jpeg"
     },
     {
       title: "Bureau privé",
       price: "2 500F",
       duration: "heure",
       icon: Building2,
-      description: "Espace de travail personnel pour plus de confidentialité"
+      description: "Espace de travail personnel pour plus de confidentialité",
+      image: "/lovable-uploads/espace-coworking.jpeg"
     },
     {
       title: "Salle de réunion",
@@ -29,7 +31,8 @@ const ServicesSection = () => {
       durationDay: "jour",
       capacity: "15 places",
       icon: Users,
-      description: "Parfait pour vos réunions d'équipe et présentations"
+      description: "Parfait pour vos réunions d'équipe et présentations",
+      image: "/lovable-uploads/salle-de-conference.jpeg"
     },
     {
       title: "Salle de conférence",
@@ -39,7 +42,8 @@ const ServicesSection = () => {
       durationDay: "jour",
       capacity: "50 places",
       icon: Users,
-      description: "Idéal pour vos conférences et séminaires"
+      description: "Idéal pour vos conférences et séminaires",
+      image: "/lovable-uploads/conference-salle.jpeg"
     },
     {
       title: "Grande salle événements",
@@ -49,7 +53,8 @@ const ServicesSection = () => {
       durationDay: "jour",
       capacity: "100 places",
       icon: Calendar,
-      description: "Espace premium pour vos grands événements"
+      description: "Espace premium pour vos grands événements",
+      image: "/lovable-uploads/salle-de-fete.jpeg"
     }
   ];
 
@@ -58,6 +63,7 @@ const ServicesSection = () => {
     { name: "Projecteur", icon: Building2 },
     { name: "Secrétariat disponible", icon: Users },
     { name: "Parking gratuit", icon: Car },
+    { name: "Tableau blanc", icon: Building2 },
     { name: "Groupe électrogène", icon: Zap }
   ];
 
@@ -77,7 +83,15 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow border-0 bg-white">
+              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow border-0 bg-white overflow-hidden">
+                {/* Image de service */}
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 <CardHeader className="pb-4">
                   <div className="w-12 h-12 bg-sogem-orange bg-opacity-10 rounded-xl flex items-center justify-center mb-4">
                     <IconComponent className="text-sogem-orange" size={24} />
@@ -86,6 +100,9 @@ const ServicesSection = () => {
                   {service.capacity && (
                     <p className="text-sm text-sogem-orange font-semibold">{service.capacity}</p>
                   )}
+                  <p className="text-xs text-gray-500 mt-2">
+                    Disponible en version ventilée et climatisée
+                  </p>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">{service.description}</p>
@@ -116,11 +133,11 @@ const ServicesSection = () => {
         {/* Équipements inclus */}
         <div className="bg-white rounded-2xl p-8 shadow-lg">
           <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Équipements & Services inclus</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {amenities.map((amenity, index) => {
               const IconComponent = amenity.icon;
               return (
-                <div key={index} className={`text-center ${index === 4 ? 'col-span-2 md:col-span-1' : ''}`}>
+                <div key={index} className={`text-center ${index === amenities.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}>
                   <div className="w-16 h-16 bg-sogem-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-3">
                     <IconComponent className="text-sogem-orange" size={24} />
                   </div>

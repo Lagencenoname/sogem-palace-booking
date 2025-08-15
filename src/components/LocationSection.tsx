@@ -29,7 +29,7 @@ const LocationSection = () => {
                   <div>
                     <h3 className="font-bold text-gray-900 mb-2">Adresse</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Fin clôture IITA, 2e Von à gauche en quittant Carrefour IITA pour Tankpè Carrefour
+                      Fin clôture IITA, 2e Voie à gauche en quittant Carrefour IITA pour Tankpè Carrefour
                     </p>
                     <p className="text-sm text-sogem-orange font-semibold mt-2">
                       Tankpè, Abomey-Calavi - Bénin
@@ -120,7 +120,7 @@ const LocationSection = () => {
                     url: 'https://maps.google.com/?q=SOGEM+PALACE,+Abomey-Calavi,+Benin'
                   });
                 } else {
-                  navigator.clipboard.writeText('Fin clôture IITA, 2e Von à gauche en quittant Carrefour IITA pour Tankpè Carrefour, Tankpè, Abomey-Calavi - Bénin');
+                  navigator.clipboard.writeText('Fin clôture IITA, 2e Voie à gauche en quittant Carrefour IITA pour Tankpè Carrefour, Tankpè, Abomey-Calavi - Bénin');
                   alert('Adresse copiée dans le presse-papiers !');
                 }
               }} className="flex-1 border-sogem-orange text-sogem-orange hover:bg-sogem-orange hover:text-white">
@@ -146,13 +146,13 @@ const LocationSection = () => {
                 2
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Vous y êtes</h4>
-              <p className="text-sm text-gray-600">Tourner à gauche dans la 2e von.</p>
+              <p className="text-sm text-gray-600">Tourner à gauche dans la 2e voie.</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-sogem-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
                 3
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">2e Von à gauche</h4>
+              <h4 className="font-semibold text-gray-900 mb-2">2e Voie à gauche</h4>
               <p className="text-sm text-gray-600">SOGEM PALACE se trouve à votre droite </p>
             </div>
           </div>
