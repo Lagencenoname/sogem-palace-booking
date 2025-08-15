@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Wifi, Car, Zap, Users, Building2, Calendar } from 'lucide-react';
+import { Crown, Wifi, Car, Zap, Users, Building2, Calendar, HardDrive, Utensils, MessageSquare, MonitorCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const ServicesSection = () => {
@@ -11,7 +10,6 @@ const ServicesSection = () => {
       duration: "jour (8h-17h)",
       priceEvening: "1 500F",
       durationEvening: "soir (17h-22h)",
-      icon: Users,
       description: "Espace de travail partagé dans un environnement stimulant",
       image: "/lovable-uploads/coworking-espace.jpeg"
     },
@@ -19,7 +17,6 @@ const ServicesSection = () => {
       title: "Bureau privé",
       price: "2 500F",
       duration: "heure",
-      icon: Building2,
       description: "Espace de travail personnel pour plus de confidentialité",
       image: "/lovable-uploads/espace-coworking.jpeg"
     },
@@ -30,7 +27,6 @@ const ServicesSection = () => {
       priceDay: "15 000F",
       durationDay: "jour",
       capacity: "15 places",
-      icon: Users,
       description: "Parfait pour vos réunions d'équipe et présentations",
       image: "/lovable-uploads/salle-de-conference.jpeg"
     },
@@ -41,7 +37,6 @@ const ServicesSection = () => {
       priceDay: "50 000F",
       durationDay: "jour",
       capacity: "50 places",
-      icon: Users,
       description: "Idéal pour vos conférences et séminaires",
       image: "/lovable-uploads/conference-salle.jpeg"
     },
@@ -52,7 +47,6 @@ const ServicesSection = () => {
       priceDay: "100 000F",
       durationDay: "jour",
       capacity: "100 places",
-      icon: Calendar,
       description: "Espace premium pour vos grands événements",
       image: "/lovable-uploads/salle-de-fete.jpeg"
     }
@@ -60,10 +54,10 @@ const ServicesSection = () => {
 
   const amenities = [
     { name: "Wi-Fi haut débit", icon: Wifi },
-    { name: "Projecteur", icon: Building2 },
-    { name: "Secrétariat disponible", icon: Users },
+    { name: "Projecteur", icon: HardDrive },
+    { name: "Secrétariat disponible", icon: MessageSquare },
     { name: "Parking gratuit", icon: Car },
-    { name: "Tableau blanc", icon: Building2 },
+    { name: "Tableau blanc", icon: MonitorCheck },
     { name: "Groupe électrogène", icon: Zap }
   ];
 
@@ -81,7 +75,6 @@ const ServicesSection = () => {
         {/* Services */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => {
-            const IconComponent = service.icon;
             return (
               <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow border-0 bg-white overflow-hidden">
                 {/* Image de service */}
@@ -90,11 +83,16 @@ const ServicesSection = () => {
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    onError={(e) => { 
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null; 
+                      target.src = "https://placehold.co/400x300/f0f0f0/333333?text=SOGEM+PALACE"; 
+                    }}
                   />
                 </div>
                 <CardHeader className="pb-4">
                   <div className="w-12 h-12 bg-sogem-orange bg-opacity-10 rounded-xl flex items-center justify-center mb-4">
-                    <IconComponent className="text-sogem-orange" size={24} />
+                    <Crown className="text-sogem-orange" size={24} />
                   </div>
                   <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
                   {service.capacity && (
@@ -108,18 +106,18 @@ const ServicesSection = () => {
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-2xl font-bold text-sogem-orange">{service.price}</span>
+                      <span className="text-2xl font-bold text-sogem-gold">{service.price}</span>
                       <span className="text-gray-500">/ {service.duration}</span>
                     </div>
                     {service.priceEvening && (
                       <div className="flex justify-between items-center">
-                        <span className="text-lg font-semibold text-sogem-orange">{service.priceEvening}</span>
+                        <span className="text-lg font-semibold text-sogem-gold">{service.priceEvening}</span>
                         <span className="text-gray-500">/ {service.durationEvening}</span>
                       </div>
                     )}
                     {service.priceDay && (
                       <div className="flex justify-between items-center">
-                        <span className="text-lg font-semibold text-sogem-orange">{service.priceDay}</span>
+                        <span className="text-lg font-semibold text-sogem-gold">{service.priceDay}</span>
                         <span className="text-gray-500">/ {service.durationDay}</span>
                       </div>
                     )}
@@ -133,13 +131,14 @@ const ServicesSection = () => {
         {/* Équipements inclus */}
         <div className="bg-white rounded-2xl p-8 shadow-lg">
           <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Équipements & Services inclus</h3>
+          {/* Grille pour les équipements - maintenant 2 colonnes sur mobile */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {amenities.map((amenity, index) => {
               const IconComponent = amenity.icon;
               return (
-                <div key={index} className={`text-center ${index === amenities.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}>
+                <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-sogem-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <IconComponent className="text-sogem-orange" size={24} />
+                    <IconComponent className="text-sogem-gold" size={28} />
                   </div>
                   <p className="text-sm font-medium text-gray-700">{amenity.name}</p>
                 </div>
