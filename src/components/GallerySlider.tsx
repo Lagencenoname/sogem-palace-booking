@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
+import { Pause, Play } from 'lucide-react';
 
 const GallerySlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -65,15 +65,7 @@ const GallerySlider = () => {
     return () => clearInterval(interval);
   }, [isPlaying, images.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const goToSlide = (index: number) => {
+  const goToSlide = (index) => {
     setCurrentSlide(index);
   };
 
@@ -93,7 +85,7 @@ const GallerySlider = () => {
         </div>
 
         {/* Slider principal */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
             {/* Image principale */}
             <img
@@ -113,23 +105,6 @@ const GallerySlider = () => {
               </div>
             </div>
 
-            {/* Boutons de navigation */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full p-3 transition-all duration-300"
-              aria-label="Image précédente"
-            >
-              <ChevronLeft size={24} />
-            </button>
-
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full p-3 transition-all duration-300"
-              aria-label="Image suivante"
-            >
-              <ChevronRight size={24} />
-            </button>
-
             {/* Bouton play/pause */}
             <button
               onClick={togglePlayPause}
@@ -146,7 +121,7 @@ const GallerySlider = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`relative flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden transition-all duration-300 ${
+                className={`relative flex-shrink-0 w-24 h-16 md:w-28 md:h-20 rounded-lg overflow-hidden transition-all duration-300 ${
                   index === currentSlide
                     ? 'ring-4 ring-sogem-orange scale-110'
                     : 'opacity-60 hover:opacity-100'
