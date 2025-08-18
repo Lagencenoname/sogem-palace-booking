@@ -48,7 +48,7 @@ const ServicesSection = () => {
       durationDay: "jour",
       capacity: "100 places",
       description: "Espace premium pour vos grands événements",
-      image: "/lovable-uploads/salle-de-fete.jpeg"
+      image: "/lovable-uploads/sogempalace-salle-de-fetes.jpeg"
     }
   ];
 
