@@ -123,6 +123,19 @@ const ServicesSection = () => {
                       </div>
                     )}
                   </div>
+                  <div className="mt-4">
+                    <button
+                      onClick={() => {
+                        const element = document.getElementById('reservation');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className="w-full bg-sogem-orange hover:bg-sogem-orange/90 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                    >
+                      Réserver
+                    </button>
+                  </div>
                 </CardContent>
               </Card>
             );

@@ -20,8 +20,12 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-sogem-orange rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">SP</span>
+            <div className="w-10 h-10 rounded-lg overflow-hidden">
+              <img 
+                src="/lovable-uploads/logo_sogem-palace.png" 
+                alt="SOGEM PALACE Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">SOGEM PALACE</h1>
