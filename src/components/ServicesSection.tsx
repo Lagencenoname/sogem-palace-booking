@@ -28,7 +28,7 @@ const ServicesSection = () => {
       durationDay: "jour",
       capacity: "15 places",
       description: "Parfait pour vos réunions d'équipe et présentations",
-      image: "/lovable-uploads/salle-de-conference.jpeg"
+      image: "/lovable-uploads/salle-reunion.jpeg"
     },
     {
       title: "Salle de conférence",
