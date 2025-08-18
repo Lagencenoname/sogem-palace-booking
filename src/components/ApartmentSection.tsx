@@ -113,7 +113,7 @@ const ApartmentSection = () => {
                 </div>
                 <div className="flex items-center space-x-3 text-gray-700">
                   <MapPin className="text-sogem-orange" size={20} />
-                  <span>Emplacement privilégié au cœur de Cotonou</span>
+                  <span>Emplacement privilégié au cœur de Cotonou et de Calavi</span>
                 </div>
               </div>
             </div>
