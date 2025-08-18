@@ -48,7 +48,7 @@ const ApartmentSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Autres Services</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Location d'appartements meublés de standing pour vos séjours d'affaires ou de loisirs
+            Location d'appartements meublés de haut standing et de véhicules pour vos séjours d'affaires ou de loisirs.
           </p>
         </div>
 
