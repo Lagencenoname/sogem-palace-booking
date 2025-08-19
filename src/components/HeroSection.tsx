@@ -71,7 +71,7 @@ const HeroSection = () => {
           <div className="flex justify-center md:justify-end">
             <div className="rounded-[2.5rem] overflow-hidden shadow-2xl w-full max-w-lg transform transition duration-300 hover:scale-[1.02]">
               <img
-                src="/lovable-uploads/sogempalace-building.jpeg"
+                src="/lovable-uploads/sogempalace-building.jpg"
                 alt="Sogem Palace"
                 className="w-full h-auto max-h-[500px] object-cover"
                 // Placeholder pour une meilleure expérience
