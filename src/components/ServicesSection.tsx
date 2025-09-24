@@ -38,7 +38,7 @@ const ServicesSection = () => {
       durationDay: "jour",
       capacity: "50 places",
       description: "Idéal pour vos conférences et séminaires",
-      image: "/lovable-uploads/conference-salle.jpeg"
+      image: "/lovable-uploads/salle-de-conference-services.jpeg"
     },
     {
       title: "Grande salle événements",
