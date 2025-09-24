@@ -24,13 +24,13 @@ const TikTokSection = () => {
         </div>
 
         {/* TikTok Embeds */}
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
+        <div className="flex flex-col lg:flex-row justify-center items-start gap-8 max-w-6xl mx-auto">
           {/* Première publication TikTok */}
           <blockquote 
             className="tiktok-embed" 
             cite="https://www.tiktok.com/@sogem.palace/video/7552254138176867596" 
             data-video-id="7552254138176867596" 
-            style={{ maxWidth: '605px', minWidth: '325px' }}
+            style={{ maxWidth: '500px', minWidth: '325px', flex: '1' }}
           > 
             <section> 
               <a 
@@ -97,7 +97,7 @@ const TikTokSection = () => {
             className="tiktok-embed" 
             cite="https://www.tiktok.com/@sogem.palace/video/7546168013624462598" 
             data-video-id="7546168013624462598" 
-            style={{ maxWidth: '605px', minWidth: '325px' }}
+            style={{ maxWidth: '500px', minWidth: '325px', flex: '1' }}
           > 
             <section> 
               <a 
