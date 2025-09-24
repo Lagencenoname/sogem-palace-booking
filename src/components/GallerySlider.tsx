@@ -20,7 +20,7 @@ const GallerySlider = () => {
       title: 'Zone Collaborative'
     },
     {
-      src: '/lovable-uploads/salle-de-conference.jpeg',
+      src: '/lovable-uploads/salle-de-conference-nouvelle.jpeg',
       alt: 'Salle de conférence équipée SOGEM PALACE',
       title: 'Salle de Conférence'
     },
