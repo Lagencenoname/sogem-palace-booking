@@ -97,7 +97,7 @@ const Footer = () => {
         {/* Ligne de séparation et copyright */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 SOGEM PALACE. PLS Boost . Tous droits réservés. Boostez votre business. <a href="https://kloo.me/noname" className="text-sogem-orange hover:underline">Découvrez comment.</a>
+           PLS Boost. © 2025 SOGEM PALACE. Tous droits réservés. Boostez votre business. <a href="https://kloo.me/noname" className="text-sogem-orange hover:underline">Découvrez comment.</a>
           </p>
         </div>
       </div>
