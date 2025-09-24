@@ -23,8 +23,9 @@ const TikTokSection = () => {
           </p>
         </div>
 
-        {/* TikTok Embed */}
-        <div className="flex justify-center">
+        {/* TikTok Embeds */}
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
+          {/* Première publication TikTok */}
           <blockquote 
             className="tiktok-embed" 
             cite="https://www.tiktok.com/@sogem.palace/video/7552254138176867596" 
@@ -84,6 +85,73 @@ const TikTokSection = () => {
                 target="_blank" 
                 title="♬ son original - SOGEM PALACE" 
                 href="https://www.tiktok.com/music/son-original-7552254155898538763?refer=embed"
+                rel="noopener noreferrer"
+              >
+                ♬ son original - SOGEM PALACE
+              </a> 
+            </section> 
+          </blockquote>
+
+          {/* Deuxième publication TikTok */}
+          <blockquote 
+            className="tiktok-embed" 
+            cite="https://www.tiktok.com/@sogem.palace/video/7546168013624462598" 
+            data-video-id="7546168013624462598" 
+            style={{ maxWidth: '605px', minWidth: '325px' }}
+          > 
+            <section> 
+              <a 
+                target="_blank" 
+                title="@sogem.palace" 
+                href="https://www.tiktok.com/@sogem.palace?refer=embed"
+                rel="noopener noreferrer"
+              >
+                @sogem.palace
+              </a> 
+              <a 
+                title="coworking" 
+                target="_blank" 
+                href="https://www.tiktok.com/tag/coworking?refer=embed"
+                rel="noopener noreferrer"
+              >
+                #coworking
+              </a> 
+              <a 
+                title="espace" 
+                target="_blank" 
+                href="https://www.tiktok.com/tag/espace?refer=embed"
+                rel="noopener noreferrer"
+              >
+                #espace
+              </a> 
+              <a 
+                title="salle" 
+                target="_blank" 
+                href="https://www.tiktok.com/tag/salle?refer=embed"
+                rel="noopener noreferrer"
+              >
+                #salle
+              </a> 
+              <a 
+                title="capcut" 
+                target="_blank" 
+                href="https://www.tiktok.com/tag/capcut?refer=embed"
+                rel="noopener noreferrer"
+              >
+                #CapCut
+              </a> 
+              <a 
+                title="sogempalace" 
+                target="_blank" 
+                href="https://www.tiktok.com/tag/sogempalace?refer=embed"
+                rel="noopener noreferrer"
+              >
+                #SOGEMPALACE
+              </a> 
+              <a 
+                target="_blank" 
+                title="♬ son original - SOGEM PALACE" 
+                href="https://www.tiktok.com/music/son-original-7546168005328931589?refer=embed"
                 rel="noopener noreferrer"
               >
                 ♬ son original - SOGEM PALACE
