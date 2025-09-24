@@ -70,6 +70,9 @@ const ServicesSection = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Des espaces adaptés à tous vos besoins professionnels, avec des tarifs accessibles
           </p>
+          <p className="text-sm text-gray-500 mt-2 max-w-2xl mx-auto">
+            Les tarifs ci-dessous peuvent varier en fonction des paramètres inclus dans votre réservation.
+          </p>
         </div>
 
         {/* Services */}
@@ -99,30 +102,27 @@ const ServicesSection = () => {
                   {service.capacity && (
                     <p className="text-sm text-sogem-orange font-semibold">{service.capacity}</p>
                   )}
-                  <p className="text-xs text-gray-500 mt-2">
-                    Disponible en version ventilée et climatisée
-                  </p>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">{service.description}</p>
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-2xl font-bold text-sogem-gold">{service.price}</span>
-                      <span className="text-gray-500">/ {service.duration}</span>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-2xl font-bold text-sogem-gold">à partir de {service.price}</span>
+                        <span className="text-gray-500">/ {service.duration}</span>
+                      </div>
+                      {service.priceEvening && (
+                        <div className="flex justify-between items-center">
+                          <span className="text-lg font-semibold text-sogem-gold">à partir de {service.priceEvening}</span>
+                          <span className="text-gray-500">/ {service.durationEvening}</span>
+                        </div>
+                      )}
+                      {service.priceDay && (
+                        <div className="flex justify-between items-center">
+                          <span className="text-lg font-semibold text-sogem-gold">à partir de {service.priceDay}</span>
+                          <span className="text-gray-500">/ {service.durationDay}</span>
+                        </div>
+                      )}
                     </div>
-                    {service.priceEvening && (
-                      <div className="flex justify-between items-center">
-                        <span className="text-lg font-semibold text-sogem-gold">{service.priceEvening}</span>
-                        <span className="text-gray-500">/ {service.durationEvening}</span>
-                      </div>
-                    )}
-                    {service.priceDay && (
-                      <div className="flex justify-between items-center">
-                        <span className="text-lg font-semibold text-sogem-gold">{service.priceDay}</span>
-                        <span className="text-gray-500">/ {service.durationDay}</span>
-                      </div>
-                    )}
-                  </div>
                   <div className="mt-4">
                     <button
                       onClick={() => {
@@ -144,7 +144,7 @@ const ServicesSection = () => {
 
         {/* Équipements inclus */}
         <div className="bg-white rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Équipements & Services inclus</h3>
+          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Équipements & Services Disponibles</h3>
           {/* Grille pour les équipements - maintenant 2 colonnes sur mobile */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {amenities.map((amenity, index) => {
