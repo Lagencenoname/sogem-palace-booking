@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Dialog,
   DialogContent,
@@ -10,15 +10,19 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 
 const MaintenanceDialog = () => {
-  const [open, setOpen] = useState(true);
-
   const handleWhatsAppRedirect = () => {
-    window.open('https://wa.me/237620306262?text=Bonjour%20SOGEM%20PALACE', '_blank');
+    const message = "Bonjour ! Je souhaite avoir plus d'informations sur les services de SOGEM PALACE.";
+    const whatsappUrl = `https://wa.me/2290195957142?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-md">
+    <Dialog open={true} modal>
+      <DialogContent 
+        className="sm:max-w-md [&>button]:hidden"
+        onPointerDownOutside={(e) => e.preventDefault()}
+        onEscapeKeyDown={(e) => e.preventDefault()}
+      >
         <DialogHeader>
           <DialogTitle className="text-2xl text-center">Site en maintenance</DialogTitle>
           <DialogDescription className="text-center text-base pt-4">
