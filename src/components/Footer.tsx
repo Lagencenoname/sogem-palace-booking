@@ -76,7 +76,7 @@ const Footer = () => {
 
         {/* Ligne de séparation et copyright */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">SOGEM PALACE. © 2025  Tous droits réservés.<a href="https://kloo.me/mederrick" className="text-sogem-orange hover:underline">Get your Website❤️.</a>
+          <p className="text-gray-400 text-sm">SOGEM PALACE. © 2025  Tous droits réservés.<a href="https://kloo.me/mederrick" className="text-sogem-orange hover:underline"> Get your Website❤️. </a>
           </p>
         </div>
       </div>
