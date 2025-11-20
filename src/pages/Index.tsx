@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -9,7 +8,6 @@ import ApartmentSection from '@/components/ApartmentSection';
 import LocationSection from '@/components/LocationSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import MaintenanceDialog from '@/components/MaintenanceDialog';
 
 const Index = () => {
   return (
@@ -25,7 +23,6 @@ const Index = () => {
       </main>
       <Footer />
       <WhatsAppButton />
-      <MaintenanceDialog />
     </div>
   );
 };
