@@ -8,7 +8,7 @@ import ApartmentSection from '@/components/ApartmentSection';
 import LocationSection from '@/components/LocationSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import PaymentBlockDialog from '@/components/PaymentBlockDialog';
+
 
 const Index = () => {
   return (
@@ -24,7 +24,7 @@ const Index = () => {
       </main>
       <Footer />
       <WhatsAppButton />
-      <PaymentBlockDialog />
+      
     </div>
   );
 };
