@@ -8,7 +8,8 @@ import ApartmentSection from '@/components/ApartmentSection';
 import LocationSection from '@/components/LocationSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import InactivityDialog from '@/components/InactivityDialog';
+import PaymentBlockDialog from '@/components/PaymentBlockDialog';
+
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -23,7 +24,7 @@ const Index = () => {
       </main>
       <Footer />
       <WhatsAppButton />
-      <InactivityDialog />
+      <PaymentBlockDialog />
     </div>
   );
 };
