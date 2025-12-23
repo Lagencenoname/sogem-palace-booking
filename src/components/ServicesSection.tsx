@@ -1,93 +1,87 @@
 import React from 'react';
 import { Crown, Wifi, Car, Zap, Users, Building2, Calendar, HardDrive, Utensils, MessageSquare, MonitorCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-
 const ServicesSection = () => {
-  const services = [
-    {
-      title: "Coworking Open Space",
-      price: "1 000F",
-      duration: "jour (8h-17h)",
-      priceEvening: "1 500F",
-      durationEvening: "soir (17h-22h)",
-      description: "Espace de travail partagé dans un environnement stimulant",
-      image: "/lovable-uploads/coworking-espace.jpeg"
-    },
-    {
-      title: "Bureau privé",
-      price: "2 500F",
-      duration: "heure",
-      description: "Espace de travail personnel pour plus de confidentialité",
-      image: "/lovable-uploads/espace-coworking.jpeg"
-    },
-    {
-      title: "Salle de réunion",
-      price: "5 000F",
-      duration: "heure",
-      priceDay: "15 000F",
-      durationDay: "jour",
-      capacity: "15 places",
-      description: "Parfait pour vos réunions d'équipe et présentations",
-      image: "/lovable-uploads/salle-reunion.jpeg"
-    },
-    {
-      title: "Salle de conférence",
-      price: "10 000F",
-      duration: "heure",
-      priceDay: "50 000F",
-      durationDay: "jour",
-      capacity: "50 places",
-      description: "Idéal pour vos conférences et séminaires",
-      image: "/lovable-uploads/salle-de-conference-services.jpeg"
-    },
-    {
-      title: "Grande salle événements",
-      price: "15 000F",
-      duration: "heure",
-      priceDay: "100 000F",
-      durationDay: "jour",
-      capacity: "100 places",
-      description: "Espace premium pour vos grands événements",
-      image: "/lovable-uploads/sogempalace-salle-de-fetes.jpeg"
-    }
-  ];
-
-  const amenities = [
-    { name: "Wi-Fi haut débit", icon: Wifi },
-    { name: "Projecteur", icon: HardDrive },
-    { name: "Secrétariat disponible", icon: MessageSquare },
-    { name: "Parking gratuit", icon: Car },
-    { name: "Tableau blanc", icon: MonitorCheck },
-    { name: "Groupe électrogène", icon: Zap }
-  ];
-
-  return (
-    <section id="services" className="py-20 bg-gray-50">
+  const services = [{
+    title: "Coworking Open Space",
+    price: "1 000F",
+    duration: "jour (8h-17h)",
+    priceEvening: "1 500F",
+    durationEvening: "soir (17h-22h)",
+    description: "Espace de travail partagé dans un environnement stimulant",
+    image: "/lovable-uploads/coworking-espace.jpeg"
+  }, {
+    title: "Bureau privé",
+    price: "2 500F",
+    duration: "heure",
+    description: "Espace de travail personnel pour plus de confidentialité",
+    image: "/lovable-uploads/espace-coworking.jpeg"
+  }, {
+    title: "Salle de réunion",
+    price: "5 000F",
+    duration: "heure",
+    priceDay: "15 000F",
+    durationDay: "jour",
+    capacity: "15 places",
+    description: "Parfait pour vos réunions d'équipe et présentations",
+    image: "/lovable-uploads/salle-reunion.jpeg"
+  }, {
+    title: "Salle de conférence",
+    price: "10 000F",
+    duration: "heure",
+    priceDay: "50 000F",
+    durationDay: "jour",
+    capacity: "50 places",
+    description: "Idéal pour vos conférences et séminaires",
+    image: "/lovable-uploads/salle-de-conference-services.jpeg"
+  }, {
+    title: "Grande salle événements",
+    price: "15 000F",
+    duration: "heure",
+    priceDay: "100 000F",
+    durationDay: "jour",
+    capacity: "100 places",
+    description: "Espace premium pour vos grands événements",
+    image: "/lovable-uploads/sogempalace-salle-de-fetes.jpeg"
+  }];
+  const amenities = [{
+    name: "Wi-Fi haut débit",
+    icon: Wifi
+  }, {
+    name: "Projecteur",
+    icon: HardDrive
+  }, {
+    name: "Secrétariat disponible",
+    icon: MessageSquare
+  }, {
+    name: "Parking gratuit",
+    icon: Car
+  }, {
+    name: "Tableau blanc",
+    icon: MonitorCheck
+  }, {
+    name: "Groupe électrogène",
+    icon: Zap
+  }];
+  return <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* En-tête */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Espaces de Travail & Événements</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Des solutions flexibles pour freelances, entreprises et organisateurs d'événements à Abomey-Calavi.</p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Des Solutions Flexibles pour Freelances, Entreprises et Organisateurs d'événements à Abomey-Calavi.</p>
         </div>
 
         {/* Services */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => {
-            return (
-              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow border-0 bg-white overflow-hidden">
+          return <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow border-0 bg-white overflow-hidden">
                 {/* Image de service */}
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    onError={(e) => { 
-                      const target = e.target as HTMLImageElement;
-                      target.onerror = null; 
-                      target.src = "https://placehold.co/400x300/f0f0f0/333333?text=SOGEM+PALACE"; 
-                    }}
-                  />
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onError={e => {
+                const target = e.target as HTMLImageElement;
+                target.onerror = null;
+                target.src = "https://placehold.co/400x300/f0f0f0/333333?text=SOGEM+PALACE";
+              }} />
                 </div>
                 <CardHeader className="pb-4">
                   {/* Couronne dorée pour les services */}
@@ -95,9 +89,7 @@ const ServicesSection = () => {
                     <Crown className="text-white" size={24} />
                   </div>
                   <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
-                  {service.capacity && (
-                    <p className="text-sm text-sogem-orange font-semibold">{service.capacity}</p>
-                  )}
+                  {service.capacity && <p className="text-sm text-sogem-orange font-semibold">{service.capacity}</p>}
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">{service.description}</p>
@@ -106,36 +98,30 @@ const ServicesSection = () => {
                         <span className="text-2xl font-bold text-sogem-gold">à partir de {service.price}</span>
                         <span className="text-gray-500">/ {service.duration}</span>
                       </div>
-                      {service.priceEvening && (
-                        <div className="flex justify-between items-center">
+                      {service.priceEvening && <div className="flex justify-between items-center">
                           <span className="text-lg font-semibold text-sogem-gold">à partir de {service.priceEvening}</span>
                           <span className="text-gray-500">/ {service.durationEvening}</span>
-                        </div>
-                      )}
-                      {service.priceDay && (
-                        <div className="flex justify-between items-center">
+                        </div>}
+                      {service.priceDay && <div className="flex justify-between items-center">
                           <span className="text-lg font-semibold text-sogem-gold">à partir de {service.priceDay}</span>
                           <span className="text-gray-500">/ {service.durationDay}</span>
-                        </div>
-                      )}
+                        </div>}
                     </div>
                   <div className="mt-4">
-                    <button
-                      onClick={() => {
-                        const element = document.getElementById('reservation');
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
-                      }}
-                      className="w-full bg-sogem-orange hover:bg-sogem-orange/90 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
-                    >
+                    <button onClick={() => {
+                  const element = document.getElementById('reservation');
+                  if (element) {
+                    element.scrollIntoView({
+                      behavior: 'smooth'
+                    });
+                  }
+                }} className="w-full bg-sogem-orange hover:bg-sogem-orange/90 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
                       Réserver
                     </button>
                   </div>
                 </CardContent>
-              </Card>
-            );
-          })}
+              </Card>;
+        })}
         </div>
 
         {/* Équipements inclus */}
@@ -144,22 +130,18 @@ const ServicesSection = () => {
           {/* Grille pour les équipements - maintenant 2 colonnes sur mobile */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {amenities.map((amenity, index) => {
-              const IconComponent = amenity.icon;
-              return (
-                <div key={index} className="text-center">
+            const IconComponent = amenity.icon;
+            return <div key={index} className="text-center">
                   {/* Fond doré et icône blanche */}
                   <div className="w-16 h-16 bg-sogem-gold rounded-full flex items-center justify-center mx-auto mb-3">
                     <IconComponent className="text-white" size={28} />
                   </div>
                   <p className="text-sm font-medium text-gray-700">{amenity.name}</p>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ServicesSection;
