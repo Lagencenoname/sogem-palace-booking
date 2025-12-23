@@ -171,7 +171,7 @@ ${requiresClimate ? `🌡️ *Climatisation :* ${climatLabel}` : ''}
 📅 *Date :* ${formData.date}
 ⏰ *Heure :* ${formData.heure || 'À convenir'}
 ⏱️ *Durée :* ${dureeLabel}
-${addProjector ? '📽️ *Option :* Vidéo projecteur (+5 000 F)' : ''}
+${addProjector ? '📽️ *Option :* Vidéo projecteur inclus' : ''}
 ${formData.notes ? `📝 *Notes :* ${formData.notes}` : ''}
 ━━━━━━━━━━━━━━━━━━━━━
 💰 *MONTANT TOTAL ESTIMÉ : ${formatPrice(totalPrice)}*
