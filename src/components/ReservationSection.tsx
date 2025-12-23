@@ -428,11 +428,6 @@ Merci de me confirmer la disponibilité.`;
                     <MessageCircle className="w-5 h-5" />
                     <span>Réserver Maintenant</span>
                   </div>
-                  {totalPrice > 0 && (
-                    <Badge variant="secondary" className="bg-white/20 text-white text-xs sm:text-sm whitespace-nowrap">
-                      {formatPrice(totalPrice)}
-                    </Badge>
-                  )}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
