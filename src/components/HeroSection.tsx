@@ -7,15 +7,12 @@ const HeroSection = () => {
   const scrollToReservation = () => {
     const element = document.getElementById('reservation');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section
-      id="accueil"
-      className="relative min-h-screen flex items-center bg-white text-gray-800 overflow-hidden"
-    >
+  return <section id="accueil" className="relative min-h-screen flex items-center bg-white text-gray-800 overflow-hidden">
       {/* Contenu principal de la section */}
       <div className="relative container mx-auto px-4 py-20 pt-24 z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -58,7 +55,7 @@ const HeroSection = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <div className="flex items-center bg-white/20 rounded-full px-4 py-2">
-                  <Wifi size={16} className="mr-2 text-sogem-gold" /> de l'heure au mois.
+                  <Wifi size={16} className="mr-2 text-sogem-gold" /> Fibre Optique  
                 </div>
                 <div className="flex items-center bg-white/20 rounded-full px-4 py-2">
                   <Clock size={16} className="mr-2 text-sogem-gold" /> Ouvert 7j/7
@@ -70,43 +67,30 @@ const HeroSection = () => {
           {/* Colonne image */}
           <div className="flex justify-center md:justify-end">
             <div className="rounded-[2.5rem] overflow-hidden shadow-2xl w-full max-w-lg transform transition duration-300 hover:scale-[1.02]">
-              <img
-                src="/lovable-uploads/sogempalace-building.jpg"
-                alt="Sogem Palace"
-                className="w-full h-auto max-h-[500px] object-cover"
-                // Placeholder pour une meilleure expérience
-                onError={(e) => { 
-                  const target = e.target as HTMLImageElement;
-                  target.onerror = null; 
-                  target.src = "https://placehold.co/500x500/fff/363636?text=SOGEM+PALACE"; 
-                }}
-              />
+              <img src="/lovable-uploads/sogempalace-building.jpg" alt="Sogem Palace" className="w-full h-auto max-h-[500px] object-cover"
+            // Placeholder pour une meilleure expérience
+            onError={e => {
+              const target = e.target as HTMLImageElement;
+              target.onerror = null;
+              target.src = "https://placehold.co/500x500/fff/363636?text=SOGEM+PALACE";
+            }} />
             </div>
           </div>
         </div>
 
         {/* Boutons centrés en bas de la section */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
-          <Button 
-            onClick={scrollToReservation}
-            size="lg"
-            className="bg-sogem-gold hover:bg-sogem-gold/90 text-white font-bold text-lg px-10 py-5 rounded-full shadow-lg border-2 border-sogem-gold transform transition duration-300 hover:-translate-y-1 glow-effect"
-          >
+          <Button onClick={scrollToReservation} size="lg" className="bg-sogem-gold hover:bg-sogem-gold/90 text-white font-bold text-lg px-10 py-5 rounded-full shadow-lg border-2 border-sogem-gold transform transition duration-300 hover:-translate-y-1 glow-effect">
             Réserver maintenant
             <ArrowRight size={24} className="ml-3" />
           </Button>
-          <Button 
-            variant="outline"
-            size="lg"
-            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            className="border-2 border-sogem-orange text-sogem-orange hover:bg-sogem-orange hover:text-white font-bold text-lg px-10 py-5 rounded-full transform transition duration-300 hover:-translate-y-1 glow-effect-outline"
-          >
+          <Button variant="outline" size="lg" onClick={() => document.getElementById('services')?.scrollIntoView({
+          behavior: 'smooth'
+        })} className="border-2 border-sogem-orange text-sogem-orange hover:bg-sogem-orange hover:text-white font-bold text-lg px-10 py-5 rounded-full transform transition duration-300 hover:-translate-y-1 glow-effect-outline">
             Découvrir nos services
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
