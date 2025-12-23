@@ -403,12 +403,12 @@ Merci de me confirmer la disponibilité.`;
                   </div>
                 </div>
 
-                {/* Total Price Display */}
+                {/* Total Price Display - Responsive for mobile */}
                 {totalPrice > 0 && (
                   <div className="bg-sogem-gold/10 border-2 border-sogem-gold rounded-lg p-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-lg font-medium text-foreground">Montant total estimé</span>
-                      <span className="text-2xl font-bold text-sogem-gold">{formatPrice(totalPrice)}</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                      <span className="text-base sm:text-lg font-medium text-foreground">Montant total estimé</span>
+                      <span className="text-xl sm:text-2xl font-bold text-sogem-gold">{formatPrice(totalPrice)}</span>
                     </div>
                     {addProjector && (
                       <p className="text-sm text-muted-foreground mt-1">
@@ -418,16 +418,18 @@ Merci de me confirmer la disponibilité.`;
                   </div>
                 )}
 
-                {/* Bouton de réservation */}
+                {/* Bouton de réservation - Responsive for mobile */}
                 <Button
                   onClick={handleWhatsAppReservation}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-4 text-lg font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98]"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white py-4 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] flex flex-col sm:flex-row items-center justify-center gap-2"
                   size="lg"
                 >
-                  <MessageCircle className="mr-2" size={20} />
-                  Réserver Maintenant
+                  <div className="flex items-center gap-2">
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Réserver Maintenant</span>
+                  </div>
                   {totalPrice > 0 && (
-                    <Badge variant="secondary" className="ml-2 bg-white/20 text-white">
+                    <Badge variant="secondary" className="bg-white/20 text-white text-xs sm:text-sm whitespace-nowrap">
                       {formatPrice(totalPrice)}
                     </Badge>
                   )}
