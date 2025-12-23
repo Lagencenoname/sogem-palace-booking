@@ -41,7 +41,7 @@ const HeroSection = () => {
                 <Crown size={28} className="text-sogem-gold ml-3 sm:ml-4 animate-bounce-slow" />
               </div>
               <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed max-w-lg">
-                L'espace idéal pour votre quiétude, entre confort et accessibilité.
+                Louez l'espace prestigieux qui vous ressemble : Coworking, Bureaux et Salles évènementielles pour toutes vos ambitions.       
               </p>
             </div>
 
@@ -54,11 +54,11 @@ const HeroSection = () => {
               </div>
               <h3 className="text-2xl md:text-3xl font-bold mb-3 drop-shadow-sm">Offre Accessible</h3>
               <p className="text-base md:text-lg mb-2 leading-relaxed">
-                Louez selon votre budget.
+                Le cadre idéal pour vos projets             
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <div className="flex items-center bg-white/20 rounded-full px-4 py-2">
-                  <Wifi size={16} className="mr-2 text-sogem-gold" /> Wi-Fi haut débit
+                  <Wifi size={16} className="mr-2 text-sogem-gold" /> de l'heure au mois.
                 </div>
                 <div className="flex items-center bg-white/20 rounded-full px-4 py-2">
                   <Clock size={16} className="mr-2 text-sogem-gold" /> Ouvert 7j/7
