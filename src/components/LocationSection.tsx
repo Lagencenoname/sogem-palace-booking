@@ -100,7 +100,6 @@ const LocationSection = () => {
                     <div className="space-y-1 text-gray-600">
                       <p>• Parking gratuit disponible</p>
                       <p>• Accessible en voiture et moto</p>
-                      <p>• Transport public : Zémidjan disponible</p>
                     </div>
                   </div>
                 </div>
