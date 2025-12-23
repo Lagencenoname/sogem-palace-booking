@@ -193,3 +193,26 @@ All colors MUST be HSL.
 .glow-effect.bg-green-600 {
   animation: glowGreen 2s ease-in-out infinite;
 }
+
+/* Soft button animation */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.btn-soft-animate {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-soft-animate:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-soft-animate:active {
+  transform: scale(0.98);
+}
