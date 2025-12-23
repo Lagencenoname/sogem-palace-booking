@@ -66,13 +66,9 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         {/* En-tête */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Services</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Espaces de Travail & Événements</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Des espaces adaptés à tous vos besoins professionnels, avec des tarifs accessibles
-          </p>
-          <p className="text-sm text-gray-500 mt-2 max-w-2xl mx-auto">
-            Les tarifs ci-dessous peuvent varier en fonction des paramètres inclus dans votre réservation.
-          </p>
+          Des solutions flexibles pour freelances, entreprises et organisateurs d'événements à Abomey-Calavi.</p>
         </div>
 
         {/* Services */}
