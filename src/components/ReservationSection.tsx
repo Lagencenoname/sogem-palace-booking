@@ -283,11 +283,11 @@ Merci de me confirmer la disponibilité et le tarif exact.`;
                   size="lg"
                 >
                   <MessageCircle className="mr-2" size={20} />
-                  Confirmer via WhatsApp
+                  Réserver Maintenant
                 </Button>
 
                 <p className="text-xs text-gray-500 text-center">
-                  * Champs obligatoires. La confirmation se fait directement via WhatsApp.
+                  *Champs obligatoires. En cliquant, vous serez redirigé vers notre support Whatsapp pour confirmation et validation.
                 </p>
               </CardContent>
             </Card>
