@@ -17,6 +17,11 @@ const GallerySection = () => {
       alt: 'Salle de réunion SOGEM PALACE',
       title: 'Salle de Réunion'
     },
+     {
+      src: '/lovable-uploads/location-bureau-prive-calavi-sogem-palace.jpeg',
+      alt: 'Bureau Prive SOGEM PALACE',
+      title: 'Bureau Prive Calavi Réunion'
+    },
     {
       src: '/lovable-uploads/847886f7-b18b-4a0d-aa2a-817e9e621f9e.png',
       alt: 'Espace de fêtes SOGEM PALACE',
