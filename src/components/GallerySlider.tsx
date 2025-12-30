@@ -34,6 +34,11 @@ const GallerySlider = () => {
       alt: 'Espace de travail partagé SOGEM PALACE',
       title: 'Espace Partagé'
     },
+     {
+      src: '/lovable-uploads/location-bureau-prive-calavi-sogem-palace.jpeg',
+      alt: 'Bureau Prive SOGEM PALACE',
+      title: 'Bureau Prive Calavi Réunion'
+    },
     {
       src: '/lovable-uploads/sogem-building-2.jpeg',
       alt: 'Bâtiment SOGEM PALACE vue extérieure',
