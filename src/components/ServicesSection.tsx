@@ -27,7 +27,7 @@ const ServicesSection = () => {
       title: "Bureaux Privés",
       subtitle: "Cadre confidentiel",
       description: "Un cadre calme et confidentiel pour vos rendez-vous d'affaires.",
-      image: "/lovable-uploads/espace-coworking.jpeg",
+      image: "/lovable-uploads/location-bureau-prive-calavi-sogem-palace.jpeg",
       hasClimateOption: true,
       pricing: {
         ventile: { heure: "5 000F", jour: "25 000F" },
